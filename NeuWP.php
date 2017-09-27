@@ -4,14 +4,14 @@
 
 require_once 'NWP.php';
 
-require_once 'Actions.php';
-require_once 'Fields.php';
-require_once 'Plugins.php.php';
-require_once 'Posts.php';
-require_once 'Taxonomies.php';
+require_once 'Classes/Actions.php';
+require_once 'Classes/Fields.php';
+require_once 'Classes/Plugins.php';
+require_once 'Classes/Posts.php';
+require_once 'Classes/Taxonomies.php';
 
-require_once 'Filters.php';
-require_once 'Query.php';
+require_once 'Classes/Filters.php';
+require_once 'Classes/Query.php';
 
 class NeuWP extends NWP
 {
