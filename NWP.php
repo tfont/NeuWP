@@ -20,4 +20,5 @@ abstract class NWP
 
     // Actions
     const PRE_GET_POSTS    = 'pre_get_posts';
+    const ADMIN_NOTICES    = 'admin_notices';
 }

@@ -1,6 +1,11 @@
 <?php
 
-class NeuWP_Fields
+namespace NeuWP
 {
-    public $slug = NWP::SLUG;
+    use \NWP as NWP;
+
+    class Fields
+    {
+        public $slug = NWP::SLUG;
+    }
 }
