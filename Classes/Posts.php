@@ -3,8 +3,9 @@
 namespace NeuWP
 {
     require_once '../Interfaces/iPosts.php';
+    require_once '../Abstracts/aPost.php';
 
-    class Posts implements iPosts
+    class Posts extends aPost implements iPosts
     {
         /**
          * @link https://developer.wordpress.org/reference/functions/get_posts/
@@ -66,6 +67,40 @@ namespace NeuWP
         public function getPermalink($post = 0, $leavename = FALSE)
         {
             return get_permalink($post, $leavename);
+        }
+
+        /**
+         * @param null $post
+         *
+         * @return bool
+         */
+        public function getId($post = NULL)
+        {
+            $post = get_post($post);
+
+            return !empty($post) ? $post->ID : FALSE;
+        }
+
+        /**
+         * @param int $post
+         *
+         * @return mixed
+         */
+        public function getTitle($post = 0)
+        {
+            return get_the_title($post);
+        }
+
+        /**
+         * Retrieve the Post Global Unique Identifier (guid).
+         *
+         * @param int $post
+         *
+         * @return mixed
+         */
+        public function getGuid($post = 0)
+        {
+            return get_the_guid($post);
         }
     }
 }

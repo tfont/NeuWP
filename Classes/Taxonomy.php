@@ -4,9 +4,10 @@ namespace NeuWP
 {
     use \NWP as NWP;
 
-    require_once '../Interfaces/iTaxonomies.php';
+    require_once '../Interfaces/iTaxonomy.php';
+    require_once '../Abstracts/aTaxonomy.php';
 
-    class Taxonomies implements iTaxonomies
+    class Taxonomy extends aTaxonomy implements iTaxonomy
     {
         /**
          * @link https://codex.wordpress.org/Function_Reference/wp_get_post_terms

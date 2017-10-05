@@ -28,5 +28,17 @@ namespace NeuWP
         {
             return add_filter($tag, $function_to_add, $priority, $accepted_args);
         }
+
+        /**
+         * @param $tag
+         * @param $function_to_remove
+         * @param int $priority
+         *
+         * @return mixed
+         */
+        public function remove($tag, $function_to_remove, $priority = 10)
+        {
+            return remove_filter($tag, $function_to_remove, $priority);
+        }
     }
 }

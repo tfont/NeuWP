@@ -2,6 +2,8 @@
 
 namespace NeuWP
 {
+    use \NWP as NWP;
+
     abstract class aFilters
     {
         /**

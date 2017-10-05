@@ -7,18 +7,28 @@ abstract class NWP
     const SLUG             = 'slug';
     const TERM_GROUP       = 'term_group';
     const TERM_TAXONOMY_ID = 'term_taxonomy_id';
-    const TAXONOMY         = 'taxonomy';
     const DESCRIPTION      = 'description';
     const PARENT           = 'parent';
     const COUNT            = 'count';
     const FILTER           = 'filter';
 
+    // Post
+    const NUMBERPOSTS      = 'numberposts';
+    const POST_TYPE        = 'post_type';
+    const ORDERBY          = 'orderby';
+    const ORDER            = 'order';
+    const SUPPRESS_FILTERS = 'suppress_filters';
+
+    // Taxonomy
+    const HIDE_EMPTY = 'hide_empty';
+    const TAXONOMY   = 'taxonomy';
+
     // Filters
-    const POST_LIMITS      = 'post_limits';
-    const POSTS_REQUEST    = 'posts_request';
-    const POSTS_WHERE      = 'posts_where';
+    const POST_LIMITS   = 'post_limits';
+    const POSTS_REQUEST = 'posts_request';
+    const POSTS_WHERE   = 'posts_where';
 
     // Actions
-    const PRE_GET_POSTS    = 'pre_get_posts';
-    const ADMIN_NOTICES    = 'admin_notices';
+    const PRE_GET_POSTS = 'pre_get_posts';
+    const ADMIN_NOTICES = 'admin_notices';
 }

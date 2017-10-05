@@ -2,7 +2,7 @@
 
 namespace NeuWP
 {
-    interface iTaxonomies
+    interface iTaxonomy
     {
         public function getTermsByPost($post_id = 0, $taxonomy = 'post_tag', $args = array());
 
