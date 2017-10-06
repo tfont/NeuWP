@@ -16,6 +16,10 @@ namespace NeuWP
 
         public $admin_notices = NWP::ADMIN_NOTICES;
 
+        public $wp_head   = NWP::WP_HEAD;
+
+        public $wp_footer = NWP::WP_FOOTER;
+
         /**
          * @param $tag
          * @param $function_to_add

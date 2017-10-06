@@ -14,7 +14,9 @@ class Example extends ExamplePlacementFunctions
         $this->action = array
         (
             'pre_get_posts' => $WordPress->Action->pre_get_posts,
-            'admin_notices' => $WordPress->Action->admin_notices
+            'admin_notices' => $WordPress->Action->admin_notices,
+            'wp_head'       => $WordPress->Action->wp_head,
+            'wp_footer'     => $WordPress->Action->wp_footer
         );
 
         // Filter objects

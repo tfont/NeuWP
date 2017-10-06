@@ -31,4 +31,6 @@ abstract class NWP
     // Actions
     const PRE_GET_POSTS = 'pre_get_posts';
     const ADMIN_NOTICES = 'admin_notices';
+    const WP_HEAD       = 'wp_head';
+    const WP_FOOTER     = 'wp_footer';
 }
