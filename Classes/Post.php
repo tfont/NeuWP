@@ -2,10 +2,10 @@
 
 namespace NeuWP
 {
-    require_once '../Interfaces/iPosts.php';
+    require_once '../Interfaces/iPost.php';
     require_once '../Abstracts/aPost.php';
 
-    class Posts extends aPost implements iPosts
+    class Post extends aPost implements iPost
     {
         /**
          * @link https://developer.wordpress.org/reference/functions/get_posts/
@@ -101,6 +101,32 @@ namespace NeuWP
         public function getGuid($post = 0)
         {
             return get_the_guid($post);
+        }
+
+        /**
+         * @link https://developer.wordpress.org/reference/functions/is_single
+         *
+         * @param string $post
+         *
+         * @return bool
+         */
+        public function isSingle($post = '')
+        {
+            return is_single($post);
+        }
+
+        /**
+         * @link https://developer.wordpress.org/reference/functions/is_singular/
+         *
+         * Is the query for an existing single post of any post type (post, attachment, page, custom post types)?
+         *
+         * @param string $post_types
+         *
+         * @return bool
+         */
+        public function isSingleAnyType($post_types = '')
+        {
+            return is_singular($post_types);
         }
     }
 }
