@@ -33,4 +33,8 @@ abstract class NWP
     const ADMIN_NOTICES = 'admin_notices';
     const WP_HEAD       = 'wp_head';
     const WP_FOOTER     = 'wp_footer';
+    const WP_LOADED     = 'wp_loaded';
+    const INIT          = 'init';
+    const ADMIN_ENQUEUE_SCRIPTS = 'admin_enqueue_scripts';
+    const WIDGETS_INIT  = 'widgets_init';
 }

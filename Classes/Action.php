@@ -20,6 +20,14 @@ namespace NeuWP
 
         public $wp_footer = NWP::WP_FOOTER;
 
+        public $wp_loaded = NWP::WP_LOADED;
+
+        public $init      = NWP::INIT;
+
+        public $admin_enqueue_scripts = NWP::ADMIN_ENQUEUE_SCRIPTS;
+
+        public $widgets_init = NWP::WIDGETS_INIT;
+
         /**
          * @param $tag
          * @param $function_to_add
