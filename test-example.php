@@ -13,14 +13,14 @@ class Example extends ExamplePlacementFunctions
         // Action objects
         $this->action = array
         (
-            'pre_get_posts' => $WordPress->Action->pre_get_posts,
-            'admin_notices' => $WordPress->Action->admin_notices,
-            'wp_head'       => $WordPress->Action->wp_head,
-            'wp_footer'     => $WordPress->Action->wp_footer,
-            'wp_loaded'     => $WordPress->Action->wp_loaded,
             'admin_enqueue_scripts' => $WordPress->Action->admin_enqueue_scripts,
-            'init'          => $WordPress->Action->init,
-            'widgets_init'  => $WordPress->Action->widgets_init
+            'admin_notices'         => $WordPress->Action->admin_notices,
+            'init'                  => $WordPress->Action->init,
+            'pre_get_posts'         => $WordPress->Action->pre_get_posts,
+            'widgets_init'          => $WordPress->Action->widgets_init,
+            'wp_head'               => $WordPress->Action->wp_head,
+            'wp_footer'             => $WordPress->Action->wp_footer,
+            'wp_loaded'             => $WordPress->Action->wp_loaded
         );
 
         // Filter objects
@@ -59,7 +59,8 @@ class Example extends ExamplePlacementFunctions
         (
             'foo' => FALSE,
             'baz' => 'qux'
-        ), 'http://example.com/link?foo=bar'); // http://example.com/link?baz=qux
+        ),
+        'http://example.com/link?foo=bar'); // http://example.com/link?baz=qux
 
         // Hook Methods
         // user Methods
