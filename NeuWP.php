@@ -10,6 +10,7 @@ namespace
     require_once 'Classes/Fields.php';
     require_once 'Classes/Formatting.php';
     require_once 'Classes/Hook.php';
+    require_once 'Classes/Option.php';
     require_once 'Classes/Plugins.php';
     require_once 'Classes/Post.php';
     require_once 'Classes/Taxonomy.php';
@@ -27,6 +28,7 @@ namespace
         public $Filters;
         public $Formatting;
         public $Hook;
+        public $Option;
         public $Plugins;
         public $Posts;
         public $Taxonomy;
@@ -44,6 +46,7 @@ namespace
             $this->Filters    = new \NeuWP\Filters;
             $this->Formatting = new \NeuWP\Formatting;
             $this->Hook       = new \NeuWP\Hook;
+            $this->Option     = new \NeuWP\Option;
             $this->Plugins    = new \NeuWP\Plugins;
             $this->Post       = new \NeuWP\Post;
             $this->Taxonomy   = new \NeuWP\Taxonomy;

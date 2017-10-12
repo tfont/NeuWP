@@ -52,7 +52,13 @@ class Example extends ExamplePlacementFunctions
         $WordPress->Filters->add($this->filter['posts_where'],    array($this, 'exampleFunction'));
         $WordPress->Filters->remove($this->filter['posts_where'], array($this, 'exampleFunction'));
 
+        // Option Methods
+        $WordPress->Option->get('example_page_id',    123);
+        $WordPress->Option->update('example_page_id', 321);
+        $WordPress->Option->delete('example_page_id');
+
         $WordPress->Hook->registerActivation();
+
 
         // Formatting Methods
         $WordPress->Formatting->editUrlQuery(array
