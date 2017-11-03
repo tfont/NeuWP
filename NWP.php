@@ -37,4 +37,5 @@ abstract class NWP
     const INIT          = 'init';
     const ADMIN_ENQUEUE_SCRIPTS = 'admin_enqueue_scripts';
     const WIDGETS_INIT  = 'widgets_init';
+    const HOMEPAGE      = 'homepage';
 }
