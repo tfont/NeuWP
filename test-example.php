@@ -20,7 +20,8 @@ class Example extends ExamplePlacementFunctions
             'widgets_init'          => $WordPress->Action->widgets_init,
             'wp_head'               => $WordPress->Action->wp_head,
             'wp_footer'             => $WordPress->Action->wp_footer,
-            'wp_loaded'             => $WordPress->Action->wp_loaded
+            'wp_loaded'             => $WordPress->Action->wp_loaded,
+            'homepage'              => $WordPress->Action->homepage
         );
 
         // Filter objects
@@ -70,6 +71,8 @@ class Example extends ExamplePlacementFunctions
 
         // Hook Methods
         // user Methods
+
+        #$WordPress->Template->Call->head();
     }
 }
 
