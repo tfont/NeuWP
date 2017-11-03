@@ -30,11 +30,11 @@ namespace NeuWP
         }
 
         /**
+         * @link https://developer.wordpress.org/reference/functions/remove_filter/
+         *
          * @param $tag
          * @param $function_to_remove
          * @param int $priority
-         *
-         * @return mixed
          */
         public function remove($tag, $function_to_remove, $priority = 10)
         {
