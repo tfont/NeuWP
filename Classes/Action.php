@@ -28,7 +28,11 @@ namespace NeuWP
 
         public $widgets_init = NWP::WIDGETS_INIT;
 
+        public $homepage = NWP::HOMEPAGE;
+
         /**
+         * @link https://developer.wordpress.org/reference/functions/add_action/
+         *
          * @param $tag
          * @param $function_to_add
          * @param int $priority
@@ -39,6 +43,29 @@ namespace NeuWP
         public function add($tag, $function_to_add, $priority = 10, $accepted_args = 1)
         {
             return add_action($tag, $function_to_add, $priority, $accepted_args);
+        }
+
+        /**
+         * @link https://developer.wordpress.org/reference/functions/remove_action/
+         *
+         * @param $tag
+         * @param $function_to_remove
+         * @param int $priority
+         */
+        public function remove($tag, $function_to_remove, $priority = 10)
+        {
+            return remove_filter($tag, $function_to_remove, $priority);
+        }
+
+        /**
+         * @link https://developer.wordpress.org/reference/functions/do_action/
+         *
+         * @param $tag
+         * @param string $arg
+         */
+        public function run($tag, $arg = '')
+        {
+            return do_action($tag, $arg);
         }
     }
 }
