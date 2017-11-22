@@ -54,7 +54,7 @@ class Example extends ExamplePlacementFunctions
         $WordPress->Filters->remove($this->filter['posts_where'], array($this, 'exampleFunction'));
 
         // Option Methods
-        $WordPress->Option->get('example_page_id',    123);
+        $WordPress->Option->get('example_page_id', 123);
         $WordPress->Option->update('example_page_id', 321);
         $WordPress->Option->delete('example_page_id');
 
@@ -73,6 +73,9 @@ class Example extends ExamplePlacementFunctions
         // user Methods
 
         #$WordPress->Template->Call->head();
+
+        #$WordPress->Translation->getLocale();
+        $WordPress->Translation->getDateTime();
     }
 }
 
