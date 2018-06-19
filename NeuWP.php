@@ -30,7 +30,7 @@ namespace
         public $Hook;
         public $Option;
         public $Plugins;
-        public $Posts;
+        public $Post;
         public $Taxonomy;
         public $Template;
         public $Translation;

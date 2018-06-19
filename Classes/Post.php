@@ -128,5 +128,82 @@ namespace NeuWP
         {
             return is_singular($post_types);
         }
+
+        public function getPost(Post $post, $post_type = 'post')
+        {
+            // 'post__in' => array(43,23,65); = getPostById(43,23,65)
+            return get_posts([
+                'post_type'      => $post_type,
+                'posts_per_page' => $post->perPage,
+                'meta_value'     => $post->metaValue,
+                'meta_compare'   => $post->metaCompare,
+                'orderby'        => $post->orderBy,
+                'meta_key'       => $post->metaKey,
+                'order'          => $post->order,
+                'meta_query'     => array
+                (
+                    array
+                    (
+                        'key'     => 'custom_field_name',
+                        'value'   => 1458, //valueof custom field
+                        'compare' => '='
+                    )
+                )
+            ]); // TODO: create a array_merge for 'meta_query'
+        }
+
+        /**
+         * Get all sticky Posts by set parameter limitations
+         *
+         * @param bool $latest_first
+         * @param null $limit
+         * @param array|null $parameters
+         *
+         * @return array
+         */
+        function getSticky($latest_first = FALSE, $limit = NULL, array $parameters = NULL)
+        {
+            // get all sticky posts
+            $sticky = get_option('sticky_posts');
+
+            // sort the stickies, latest first
+            if ($latest_first === TRUE)
+            {
+                rsort($sticky);
+            }
+
+            // number of stickies to show
+            if ($limit !== NULL && is_int($limit))
+            {
+                $sticky = array_slice($sticky, 0, $limit);
+            }
+
+            $arguments = array
+            (
+                'post_status'    => 'publish',
+                'post__in'       =>  $sticky,
+                'posts_per_page' => -1,
+            );
+
+            if (!empty($parameters))
+            {
+                if (isset($parameters['post__in']))
+                {
+                    unset($parameters['post__in']);
+                }
+
+                $arguments = array_merge($arguments, $parameters);
+            }
+
+            return get_posts($arguments);
+        }
+    }
+
+    /*
+     * Get all IDs of Sticky Posts
+     */
+    function getStickyIDs()
+    {
+        return get_option('sticky_posts');
     }
 }
