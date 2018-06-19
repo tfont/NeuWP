@@ -76,6 +76,14 @@ class Example extends ExamplePlacementFunctions
 
         #$WordPress->Translation->getLocale();
         $WordPress->Translation->getDateTime();
+
+        // Retrieving a full post (custom field + advance ordering)
+        $post_example = new NeuWP\Post();
+        $post_example->metaKey ='test';
+        $post_example->orderBy = 'field1';
+        $post_example->order   = 'DESC';
+
+        $WordPress->Post->getPost($post_example, 'custom_post');
     }
 }
 
