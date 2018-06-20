@@ -2,6 +2,11 @@
 
 namespace NeuWP
 {
+    /**
+     * Class Template_Call
+     *
+     * @package NeuWP
+     */
     final class Template_Call
     {
         /**
@@ -23,13 +28,62 @@ namespace NeuWP
         }
     }
 
+    /**
+     * Class Template_Script
+     *
+     * @package NeuWP
+     */
+    final class Template_Script
+    {
+        /**
+         * Registers the file immediately
+         *
+         * @link https://developer.wordpress.org/reference/functions/wp_register_script/
+         *
+         * @param $handle
+         * @param $src
+         * @param array $deps
+         * @param bool $ver
+         * @param bool $in_footer
+         *
+         * @return bool
+         */
+        public function addImmediately($handle, $src, $deps = array(), $ver = FALSE, $in_footer = FALSE)
+        {
+            return wp_register_script($handle, $src, $deps, $ver, $in_footer);
+        }
+
+        /**
+         * Add in a queue to register the file
+         *
+         * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+         *
+         * @param $handle
+         * @param string $src
+         * @param array $deps
+         * @param bool $ver
+         * @param bool $in_footer
+         */
+        public function addAfterInit($handle, $src = '', $deps = array(), $ver = FALSE, $in_footer = FALSE)
+        {
+            return wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
+        }
+    }
+
+    /**
+     * Class Template
+     *
+     * @package NeuWP
+     */
     class Template
     {
         public $Call;
+        public $Script;
 
         public function __construct()
         {
-            $this->Call = new Template_Call;
+            $this->Call   = new Template_Call;
+            $this->Script = new Template_Script;
         }
 
         /**
@@ -117,6 +171,5 @@ namespace NeuWP
         {
             return get_template_part($slug, $name);
         }
-
     }
 }

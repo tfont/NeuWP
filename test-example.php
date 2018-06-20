@@ -74,6 +74,10 @@ class Example extends ExamplePlacementFunctions
 
         #$WordPress->Template->Call->head();
 
+        // Adding Scripts
+        $WordPress->Template->Script->addImmediately('test-js', '/js/scripts.js', ['jquery'], 5);
+        $WordPress->Template->Script->addAfterInit('jquery');
+
         #$WordPress->Translation->getLocale();
         $WordPress->Translation->getDateTime();
 
